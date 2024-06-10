@@ -25,3 +25,12 @@ model = Sequential([
     
     Dense(43, activation='softmax')
 ])
+
+from keras.optimizers import SGD
+
+
+sgd_optimizer = SGD(lr=0.01, momentum=0.9, decay=1e-6, nesterov=True)
+
+model.compile(optimizer=sgd_optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
+epochs=20
+
